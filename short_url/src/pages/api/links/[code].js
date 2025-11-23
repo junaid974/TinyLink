@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       const result = await query(
-        'SELECT code, "targeturl", "totalClicks", "lastClicked" FROM Link WHERE code = $1',
+        'SELECT code, "targeturl", "totalClicks", "lastClicked", "createdAt" FROM Link WHERE code = $1',
         [code]
       );
 

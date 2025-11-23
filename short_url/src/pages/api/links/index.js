@@ -51,7 +51,7 @@ export default async function handler(req, res) {
   else if (req.method === "GET") {
     try {
       const result = await query(
-        'SELECT code, "targeturl", "totalClicks", "lastClicked" FROM Link ORDER BY "createdAt" DESC'
+        'SELECT code, "targeturl", "totalClicks", "lastClicked", "createdAt" FROM Link ORDER BY "createdAt" DESC'
       );
 
       if (!result || !result.rows) {
